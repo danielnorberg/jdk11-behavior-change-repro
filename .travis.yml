@@ -3,7 +3,7 @@ dist: trusty
 language: java
 
 # https://github.com/sormuras/sormuras.github.io/blob/master/.travis.yml
-before_script:
+before_install:
 - unset -v _JAVA_OPTIONS
 - wget https://github.com/sormuras/bach/raw/master/install-jdk.sh
 
@@ -12,36 +12,34 @@ jobs:
 
   - stage: OpenJDK
     env: JDK=1.8
-    script: jdk_switcher use openjdk8
+    install: jdk_switcher use openjdk8
   - # stage: ...
     env: JDK=9
-    script: source install-jdk.sh -F 9
+    install: source install-jdk.sh -F 9
   - # stage: ...
     env: JDK=10
-    script: source install-jdk.sh -F 10
+    install: source install-jdk.sh -F 10
   - # stage: ...
     env: JDK=11
-    script: source install-jdk.sh -F 11
+    install: source install-jdk.sh -F 11
   - # stage: ...
     env: JDK=12
-    script: source install-jdk.sh -F 12
+    install: source install-jdk.sh -F 12
 
   - stage: Oracle JDK
     env: JDK=1.8
-    script: jdk_switcher use oraclejdk8
+    install: jdk_switcher use oraclejdk8
   - # stage: ...
     env: JDK=9
-    script: source install-jdk.sh -F 9 -L BCL
+    install: source install-jdk.sh -F 9 -L BCL
   - # stage: ...
     env: JDK=10
-    script: source install-jdk.sh -F 10 -L BCL
+    install: source install-jdk.sh -F 10 -L BCL
   - # stage: ...
     env: JDK=11
-    script: source install-jdk.sh -F 11 -L BCL
+    install: source install-jdk.sh -F 11 -L BCL
 
-install: false
-
-after_script:
+script:
 - echo JAVA_HOME = ${JAVA_HOME}
 - echo PATH = ${PATH}
 - ls ${JAVA_HOME}
