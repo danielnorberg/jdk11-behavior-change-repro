@@ -12,40 +12,40 @@ jobs:
 
   - env:
     - JDK=1.8
-    - VENDOR=OpenJDK
+    - DIST=OpenJDK
     install: jdk_switcher use openjdk8
   - env:
     - JDK=9
-    - VENDOR=OpenJDK
+    - DIST=OpenJDK
     install: source install-jdk.sh -F 9
   - env:
     - JDK=10
-    - VENDOR=OpenJDK
+    - DIST=OpenJDK
     install: source install-jdk.sh -F 10
   - env:
     - JDK=11
-    - VENDOR=OpenJDK
+    - DIST=OpenJDK
     install: source install-jdk.sh -F 11
   - env:
     - JDK=12
-    - VENDOR=OpenJDK
+    - DIST=OpenJDK
     install: source install-jdk.sh -F 12
 
   - env:
     - JDK=1.8
-    - VENDOR=Oracle
+    - DIST=OracleJDK
     install: jdk_switcher use oraclejdk8
   - env:
     - JDK=9
-    - VENDOR=Oracle
+    - DIST=OracleJDK
     install: jdk_switcher use oraclejdk9
   - env:
     - JDK=10
-    - VENDOR=Oracle
+    - DIST=OracleJDK
     install: source install-jdk.sh -F 10 -L BCL
   - env:
     - JDK=11
-    - VENDOR=Oracle
+    - DIST=OracleJDK
     install: source install-jdk.sh -F 11 -L BCL
 
 script:
