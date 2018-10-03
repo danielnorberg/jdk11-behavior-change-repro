@@ -11,7 +11,7 @@ jobs:
   include:
 
   - stage: OpenJDK
-    env: JDK=8
+    env: JDK=1.8
     script: jdk_switcher use openjdk8
   - # stage: ...
     env: JDK=9
@@ -27,7 +27,7 @@ jobs:
     script: source install-jdk.sh -F 12
 
   - stage: Oracle JDK
-    env: JDK=8
+    env: JDK=1.8
     script: jdk_switcher use oraclejdk8
   - # stage: ...
     env: JDK=9
@@ -39,8 +39,11 @@ jobs:
     env: JDK=11
     script: source install-jdk.sh -F 11 -L BCL
 
+install: false
+
 after_script:
 - echo JAVA_HOME = ${JAVA_HOME}
 - echo PATH = ${PATH}
 - ls ${JAVA_HOME}
 - java -version
+- mvn clean compile -Djava.version=$JDK
