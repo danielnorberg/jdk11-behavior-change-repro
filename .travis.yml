@@ -31,7 +31,7 @@ jobs:
     install: jdk_switcher use oraclejdk8
   - # stage: ...
     env: JDK=9
-    install: source install-jdk.sh -F 9 -L BCL
+    install: jdk_switcher use oraclejdk9
   - # stage: ...
     env: JDK=10
     install: source install-jdk.sh -F 10 -L BCL
