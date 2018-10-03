@@ -1,5 +1,13 @@
 # JDK11 Javac Behavior Change Repro
 
+## Background
+
+We encountered a Javac behavior change when trying to get [Styx](https://github.com/spotify/styx/) to compile on JDK 11. Styx had compiled on JDK 9 and 10 but JDK 11 Javac complained about this test code using mockito: https://github.com/spotify/styx/blob/4a5b8fff8226bbf690c5f4579fd9af2fa4f8d904/styx-api-service/src/test/java/com/spotify/styx/api/workflow/WorkflowInitializerTest.java#L68
+
+> unreported exception java.lang.Exception; must be caught or declared to be thrown
+
+This is an attempt to provide a minimal repro of the observed behavior change.
+
 ## Travis
 
 https://travis-ci.org/danielnorberg/jdk11-behavior-change-repro
