@@ -10,42 +10,33 @@ before_install:
 jobs:
   include:
 
-  - env:
-    - JDK=1.8
-    - DIST=OpenJDK
+  - env: JDK=1.8
+    name: OpenJDK 8
     install: jdk_switcher use openjdk8
-  - env:
-    - JDK=9
-    - DIST=OpenJDK
+  - env: JDK=9
+    name: OpenJDK 9
     install: source install-jdk.sh -F 9
-  - env:
-    - JDK=10
-    - DIST=OpenJDK
+  - env: JDK=10
+    name: OpenJDK 10
     install: source install-jdk.sh -F 10
-  - env:
-    - JDK=11
-    - DIST=OpenJDK
+  - env: JDK=11
+    name: OpenJDK 11
     install: source install-jdk.sh -F 11
-  - env:
-    - JDK=12
-    - DIST=OpenJDK
+  - env: JDK=12
+    name: OpenJDK 12
     install: source install-jdk.sh -F 12
 
-  - env:
-    - JDK=1.8
-    - DIST=OracleJDK
+  - env: JDK=1.8
+    name: OracleJDK 8
     install: jdk_switcher use oraclejdk8
-  - env:
-    - JDK=9
-    - DIST=OracleJDK
+  - env: JDK=9
+    name: OracleJDK 9
     install: jdk_switcher use oraclejdk9
-  - env:
-    - JDK=10
-    - DIST=OracleJDK
+  - env: JDK=10
+    name: OracleJDK 10
     install: source install-jdk.sh -F 10 -L BCL
-  - env:
-    - JDK=11
-    - DIST=OracleJDK
+  - env: JDK=11
+    name: OracleJDK 11
     install: source install-jdk.sh -F 11 -L BCL
 
 script:
