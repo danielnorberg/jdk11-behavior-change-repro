@@ -29,6 +29,10 @@ public class Repro {
    */
   void repro() throws IOException {
     when(f(any()));
+
+    // The below code compiles on JDK 11. Perhaps when() wrapping the call to f(any()) breaks type inference?
+    // var v = f(any());
+    // when(v);
   }
 
   interface G<T, E extends Exception> { }
