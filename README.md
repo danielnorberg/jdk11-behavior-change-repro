@@ -6,14 +6,14 @@
 
     JAVA_HOME=$(/usr/libexec/java_home -v 11) mvn clean compile -Djava.version=11
     ...
-    [ERROR] jdk11-behavior-change-repro/src/main/java/Repro.java:[9,11] unreported exception java.lang.Exception; must be caught or declared to be thrown
+    [ERROR] Repro.java:[9,11] unreported exception java.lang.Exception; must be caught or declared to be thrown
     ...
 
 **JDK12 (ea)**
 
     JAVA_HOME=$(/usr/libexec/java_home -v 12) mvn clean compile -Djava.version=12
     ...
-    [ERROR] jdk11-behavior-change-repro/src/main/java/Repro.java:[9,11] unreported exception java.lang.Exception; must be caught or declared to be thrown
+    [ERROR] Repro.java:[9,11] unreported exception java.lang.Exception; must be caught or declared to be thrown
     ...
 
 
