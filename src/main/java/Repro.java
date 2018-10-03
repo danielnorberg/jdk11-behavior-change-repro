@@ -9,9 +9,7 @@ public class Repro {
     when(f(any()));
   }
 
-  interface G<T, E extends Exception> {
-
-  }
+  interface G<T, E extends Exception> { }
 
   <T, E extends Exception> T f(G<T, E> g) throws IOException, E {
     return null;
@@ -25,7 +23,5 @@ public class Repro {
     return null;
   }
 
-  interface OngoingStubbing<T> {
-
-  }
+  interface OngoingStubbing<T> { }
 }
