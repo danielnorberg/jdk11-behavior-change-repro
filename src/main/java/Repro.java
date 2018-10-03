@@ -3,7 +3,9 @@ import java.io.IOException;
 public class Repro {
 
   /**
-   * Fails to compile on JDK 11 but compiles on : "unreported exception java.lang.Exception; must be caught or declared to be thrown"
+   * Compiles on JDK 8, 9 and 10 but fails to compile on JDK 11:
+   *
+   *   unreported exception java.lang.Exception; must be caught or declared to be thrown
    */
   void repro() throws IOException {
     when(f(any()));
