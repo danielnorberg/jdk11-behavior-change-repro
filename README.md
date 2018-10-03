@@ -41,11 +41,8 @@ public class Repro {
     return null;
   }
 
-  static <T> OngoingStubbing<T> when(T methodCall) {
-    return null;
+  static <T> void when(T methodCall) {
   }
-
-  interface OngoingStubbing<T> { }
 }
 ```
 
