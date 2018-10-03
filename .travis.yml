@@ -10,33 +10,42 @@ before_install:
 jobs:
   include:
 
-  - stage: OpenJDK
-    env: JDK=1.8
+  - env:
+    - JDK=1.8
+    - VENDOR=OpenJDK
     install: jdk_switcher use openjdk8
-  - # stage: ...
-    env: JDK=9
+  - env:
+    - JDK=9
+    - VENDOR=OpenJDK
     install: source install-jdk.sh -F 9
-  - # stage: ...
-    env: JDK=10
+  - env:
+    - JDK=10
+    - VENDOR=OpenJDK
     install: source install-jdk.sh -F 10
-  - # stage: ...
-    env: JDK=11
+  - env:
+    - JDK=11
+    - VENDOR=OpenJDK
     install: source install-jdk.sh -F 11
-  - # stage: ...
-    env: JDK=12
+  - env:
+    - JDK=12
+    - VENDOR=OpenJDK
     install: source install-jdk.sh -F 12
 
-  - stage: Oracle JDK
-    env: JDK=1.8
+  - env:
+    - JDK=1.8
+    - VENDOR=Oracle
     install: jdk_switcher use oraclejdk8
-  - # stage: ...
-    env: JDK=9
+  - env:
+    - JDK=9
+    - VENDOR=Oracle
     install: jdk_switcher use oraclejdk9
-  - # stage: ...
-    env: JDK=10
+  - env:
+    - JDK=10
+    - VENDOR=Oracle
     install: source install-jdk.sh -F 10 -L BCL
-  - # stage: ...
-    env: JDK=11
+  - env:
+    - JDK=11
+    - VENDOR=Oracle
     install: source install-jdk.sh -F 11 -L BCL
 
 script:
